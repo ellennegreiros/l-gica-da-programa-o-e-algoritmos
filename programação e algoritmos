@@ -1,0 +1,52 @@
+#PRINT PARA O CARDÁPIO
+print('Bem vinda a nossa loja de Marmitas da Ellen Neubert')
+print(' -------------------------Cardápio------------------------','\n','| Tamanho |','| Bife Acebolado(BA) |','| Filé de Frango(FF) |')
+print(' |    P    |','|    R$ 16.00        |','|    R$ 15.00        |','\n',      '|    M    |','|    R$ 18.00        |','|    R$ 17.00        |','\n',      '|    G    |','|    R$ 22.00        |','|    R$ 21.00        |' )
+print(' ---------------------------------------------------------')
+total = 0 
+
+
+while True:
+   
+   # RECEBENDO INFORMAÇÕES E VERIFICANDO SE BATE COM O CARDÁPIO
+    sabor = str(input('Digite o sabor BA para bife acebolado ou FF para filé de frango:'))
+    sabor = sabor.upper()
+    if sabor != ('BA') and sabor != ('FF'):
+        print('Sabor inválido, tente novamente! \n')
+        continue
+
+    tamanho =  str(input('Digite o tamanho desejado:'))  
+    tamanho = tamanho.upper()
+    if tamanho != ('P') and tamanho != ('M') and tamanho != ('G'):
+        print('Tamanho inválido, tente novamente! \n')
+        continue
+    
+    #VERIFICANDO SABORES E TAMANHOS PARA DEFINIR OS VALORES E ADICIONAR NO CONTADOR  
+    if sabor == 'BA':
+        if tamanho == 'P':
+            print('Você pediu um bife acebolado no tamanho P no valor de: R$ 16.00.\n')
+            total += 16
+        elif tamanho == 'M':
+            print('Você pediu um bife acebolado no tamanho M no valor de: R$ 18.00.\n ')
+            total += 18
+        else:
+                print('Você pediu um bife acebolado no tamanho G no valor de: R$ 22.00.\n ')
+                total += 22
+        
+    if sabor == 'FF':
+        if tamanho == 'P':
+          print('Você pediu um filé de frango no tamanho P no valor de: R$ 15.00.\n ')
+          total += 15
+        elif tamanho == 'M':
+         print('Você pediu um filé de frango no tamanho M no valor de: R$ 17.00.\n ')
+         total += 17
+        else:
+          print('Você pediu um filé de frango no tamanho G no valor de: R$ 21.00.\n ')
+          total += 21
+    
+    
+    OutroPedido = str(input('Deseja mais alguma coisa? S/N:'))
+    OutroPedido = OutroPedido.upper()
+    if OutroPedido == 'N' or OutroPedido == 'N':
+     break
+print('O valor do pedido foi de: R${:.2f}'.format(total))
